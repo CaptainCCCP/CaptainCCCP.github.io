@@ -19,25 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:notguoshangyi@outlook.com.com || fa fa-envelope"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="A student majoring IoT Engineering in Beijing University of Technology.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Moige&#39;s Personal Page">
-<meta property="og:url" content="https://captaincccp.github.io/">
+    <meta name="description" content="Background knowledges基于约束的方法Graph 3 kinds:  chain    X-&gt;Z-&gt;Y  fork     X&lt;-Z-&gt;Y  Z是X和Y的共因，如果X发生改变，Y很有可能也应该改变  when the middle Z is given,X and Y won’t be affected anymore.  collider x-&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="causal">
+<meta property="og:url" content="https://captaincccp.github.io/2023/08/06/causal/">
 <meta property="og:site_name" content="Moige&#39;s Personal Page">
-<meta property="og:description" content="A student majoring IoT Engineering in Beijing University of Technology.">
+<meta property="og:description" content="Background knowledges基于约束的方法Graph 3 kinds:  chain    X-&gt;Z-&gt;Y  fork     X&lt;-Z-&gt;Y  Z是X和Y的共因，如果X发生改变，Y很有可能也应该改变  when the middle Z is given,X and Y won’t be affected anymore.  collider x-&gt;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-06T13:03:51.000Z">
+<meta property="article:modified_time" content="2023-08-06T14:31:16.211Z">
 <meta property="article:author" content="Shawn Guo">
+<meta property="article:tag" content="causal AI">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://captaincccp.github.io/">
+<link rel="canonical" href="https://captaincccp.github.io/2023/08/06/causal/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/2023/08/06/causal/","path":"2023/08/06/causal/","title":"causal"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Moige's Personal Page</title>
+<title>causal | Moige's Personal Page</title>
   
 
 
@@ -70,7 +74,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Moige's Personal Page</h1>
+      <p class="site-title">Moige's Personal Page</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -96,7 +100,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -109,6 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background-knowledges"><span class="nav-number">1.</span> <span class="nav-text">Background knowledges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">基于约束的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">典型算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markov-Equivalence-Class%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="nav-number">1.1.3.</span> <span class="nav-text">Markov Equivalence Class马尔科夫等价类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%88%86%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95-score-based"><span class="nav-number">1.2.</span> <span class="nav-text">基于分数的方法 score-based</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Causal-inference"><span class="nav-number">2.</span> <span class="nav-text">Causal inference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,119 +146,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/07/Papers-reading-23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/self.png">
-      <meta itemprop="name" content="Shawn Guo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Moige's Personal Page">
-      <meta itemprop="description" content="A student majoring IoT Engineering in Beijing University of Technology.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Moige's Personal Page">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/07/Papers-reading-23/" class="post-title-link" itemprop="url">Papers-read-2023</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-08-07 21:07:48 / Modified: 21:52:32" itemprop="dateCreated datePublished" datetime="2023-08-07T21:07:48+08:00">2023-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/papers-read/" itemprop="url" rel="index"><span itemprop="name">papers read</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>151</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h1 id="August"><a href="#August" class="headerlink" title="August"></a>August</h1><h3 id="Causality-for-Machine-Learning"><a href="#Causality-for-Machine-Learning" class="headerlink" title="Causality for Machine Learning"></a>Causality for Machine Learning</h3><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><pre><code>some of causality works is already in the process of entering the machine learning mainstream, in particular the view that causal modeling can lead to more invariant or robust models.
-
-Some think we are now in the middle of third revolution of information, which is also likely a conserved quantity that could only be converted or harvested rather than generating it from air.The first industrial revolutions rendered energy a universal currency; the same may be happening to information.
-One can argue that the present revolution has two components: 
-- Computer Science and AI manipulatiing symbols
-- About learning,extract information also from unstructured data
-In recent years, genuine connections between machine learning and causality have emerged, and we will argue that these connections are crucial if we want to make progress on the major open problems of AI.
-</code></pre>
-<h5 id="2"><a href="#2" class="headerlink" title="2"></a>2</h5><h1 id="July"><a href="#July" class="headerlink" title="July"></a>July</h1><h1 id="June"><a href="#June" class="headerlink" title="June"></a>June</h1><h1 id="May"><a href="#May" class="headerlink" title="May"></a>May</h1><h1 id="April"><a href="#April" class="headerlink" title="April"></a>April</h1><h1 id="March"><a href="#March" class="headerlink" title="March"></a>March</h1><h1 id="February"><a href="#February" class="headerlink" title="February"></a>February</h1><h1 id="January"><a href="#January" class="headerlink" title="January"></a>January</h1>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/06/causal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -267,13 +170,13 @@ In recent years, genuine connections between machine learning and causality have
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Moige's Personal Page">
+      <meta itemprop="name" content="causal | Moige's Personal Page">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/06/causal/" class="post-title-link" itemprop="url">causal</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          causal
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -320,8 +223,7 @@ In recent years, genuine connections between machine learning and causality have
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
+    <div class="post-body" itemprop="articleBody"><span id="more"></span>
 <h1 id="Background-knowledges"><a href="#Background-knowledges" class="headerlink" title="Background knowledges"></a>Background knowledges</h1><h2 id="基于约束的方法"><a href="#基于约束的方法" class="headerlink" title="基于约束的方法"></a>基于约束的方法</h2><h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3><ul>
 <li><p>3 kinds:</p>
 </li>
@@ -352,7 +254,6 @@ In recent years, genuine connections between machine learning and causality have
 <li>马尔科夫等价类中的图有相同的骨架skeleton和V-结构<br>比如chain和fork的3中图就有相同的V结构</li>
 </ul>
 <h2 id="基于分数的方法-score-based"><a href="#基于分数的方法-score-based" class="headerlink" title="基于分数的方法 score-based"></a>基于分数的方法 score-based</h2><h1 id="Causal-inference"><a href="#Causal-inference" class="headerlink" title="Causal inference"></a>Causal inference</h1>
-      
     </div>
 
     
@@ -360,226 +261,56 @@ In recent years, genuine connections between machine learning and causality have
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/ShangYi_Guo">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+      </div>
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.zhihu.com/people/yige-14-68">
+            <span class="icon">
+              <i class="fab fa-zhihu"></i>
+            </span>
+
+            <span class="label">Zhihu</span>
+          </a>
+      </div>
+  </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/causal-AI/" rel="tag"><i class="fa fa-tag"></i> causal AI</a>
+              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          </div>
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/05/DDPM-learn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/self.png">
-      <meta itemprop="name" content="Shawn Guo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Moige's Personal Page">
-      <meta itemprop="description" content="A student majoring IoT Engineering in Beijing University of Technology.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Moige's Personal Page">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/05/DDPM-learn/" class="post-title-link" itemprop="url">DDPM learn</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-08-05 22:39:27" itemprop="dateCreated datePublished" datetime="2023-08-05T22:39:27+08:00">2023-08-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-08-07 13:41:39" itemprop="dateModified" datetime="2023-08-07T13:41:39+08:00">2023-08-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/learning-notes/" itemprop="url" rel="index"><span itemprop="name">learning notes</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>941</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <pre><code>Learning notes of DDPM.
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/05/DDPM-learn/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/04/Marsilio%20Ficino/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/self.png">
-      <meta itemprop="name" content="Shawn Guo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Moige's Personal Page">
-      <meta itemprop="description" content="A student majoring IoT Engineering in Beijing University of Technology.">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Moige's Personal Page">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/08/04/Marsilio%20Ficino/" class="post-title-link" itemprop="url">Marsilio Ficino</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-08-04 22:39:49" itemprop="dateCreated datePublished" datetime="2023-08-04T22:39:49+08:00">2023-08-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-08-06 10:26:08" itemprop="dateModified" datetime="2023-08-06T10:26:08+08:00">2023-08-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Translation/" itemprop="url" rel="index"><span itemprop="name">Translation</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Word count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Word count in article: </span>
-      <span>3k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>11 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Translation for English version wiki, 2023.8.4<br>以下内容翻译自维基百科<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Marsilio_Ficino">Marsilio_Ficino</a>，除翻译外未经修改。<br>根据<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0协议</a>，可以自由复制<br>The Renaissance –Marsilio Ficino</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/08/04/Marsilio%20Ficino/#more" rel="contents">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/05/DDPM-learn/" rel="prev" title="DDPM learn">
+                  <i class="fa fa-angle-left"></i> DDPM learn
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+            <div class="post-nav-item">
+                <a href="/2023/08/07/Papers-reading-23/" rel="next" title="Papers-read-2023">
+                  Papers-read-2023 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
