@@ -27,7 +27,7 @@
 <meta property="og:description" content="Time series tasks, RNN LSTM and Transformers. (building)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-23T01:27:55.000Z">
-<meta property="article:modified_time" content="2023-08-23T13:48:52.808Z">
+<meta property="article:modified_time" content="2023-09-17T11:02:43.742Z">
 <meta property="article:author" content="Shangyi Guo">
 <meta property="article:tag" content="time series">
 <meta name="twitter:card" content="summary">
@@ -112,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-series-tasks"><span class="nav-number">1.</span> <span class="nav-text">Time series tasks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#prophetarimaLSTMTransformers-About-the-task-itself-window-stride"><span class="nav-number">1.1.</span> <span class="nav-text">prophetarimaLSTMTransformers# About the task itself- window- stride</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-series-tasks"><span class="nav-number">1.</span> <span class="nav-text">Time series tasks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Time-with-some-Space"><span class="nav-number">2.</span> <span class="nav-text">Time with some Space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Future"><span class="nav-number">3.</span> <span class="nav-text">Future</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#About-the-task-itself"><span class="nav-number">4.</span> <span class="nav-text">About the task itself</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cite"><span class="nav-number">5.</span> <span class="nav-text">cite</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -140,23 +140,6 @@
     </div>
 
     
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    Related Posts
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/08/11/Differential-Equation/" rel="bookmark">
-        <time class="popular-posts-time">2023-08-11</time>
-        <br>
-      Differential Equation
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
   </aside>
 
 
@@ -201,9 +184,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-08-23 09:27:55 / Modified: 21:48:52" itemprop="dateCreated datePublished" datetime="2023-08-23T09:27:55+08:00">2023-08-23</time>
+      <time title="Created: 2023-08-23 09:27:55" itemprop="dateCreated datePublished" datetime="2023-08-23T09:27:55+08:00">2023-08-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-09-17 19:02:43" itemprop="dateModified" datetime="2023-09-17T19:02:43+08:00">2023-09-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -229,7 +218,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>22</span>
+      <span>82</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -250,7 +239,32 @@
 </code></pre>
 <span id="more"></span>
 
-<h1 id="Time-series-tasks"><a href="#Time-series-tasks" class="headerlink" title="Time series tasks"></a>Time series tasks</h1><h2 id="prophetarimaLSTMTransformers-About-the-task-itself-window-stride"><a href="#prophetarimaLSTMTransformers-About-the-task-itself-window-stride" class="headerlink" title="prophetarimaLSTMTransformers# About the task itself- window- stride"></a>prophet<br>arima<br>LSTM<br>Transformers<br># About the task itself<br>- window<br>- stride</h2>
+<h1 id="Time-series-tasks"><a href="#Time-series-tasks" class="headerlink" title="Time series tasks"></a>Time series tasks</h1><p>prophet<br>arima<br>LSTM<br>Transformers:</p>
+<ul>
+<li>Vanilla Transformer</li>
+<li>LogTrans</li>
+<li>Informer (AAAI 2020)</li>
+<li>AST (NeurIPS 2020)</li>
+<li>Autoformer (NeurIPS 2021)</li>
+<li>FEDformer (2022)</li>
+<li>Pyraformer (ICLR 2022)</li>
+</ul>
+<h1 id="Time-with-some-Space"><a href="#Time-with-some-Space" class="headerlink" title="Time with some Space"></a>Time with some Space</h1><ul>
+<li>Traffic Transformer (GIS 2020)</li>
+</ul>
+<h1 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h1><ul>
+<li>Inductive Biases for Time Series Transformers</li>
+<li>Transformers and GNN for Time Series</li>
+<li>Pre-trained Transformers for Time Series</li>
+<li>Transformers with NAS for Time Series</li>
+</ul>
+<h1 id="About-the-task-itself"><a href="#About-the-task-itself" class="headerlink" title="About the task itself"></a>About the task itself</h1><ul>
+<li>window</li>
+<li>stride</li>
+<li></li>
+</ul>
+<h1 id="cite"><a href="#cite" class="headerlink" title="cite"></a>cite</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/484044005">https://zhuanlan.zhihu.com/p/484044005</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36488653/category_11689003.html">https://blog.csdn.net/weixin_36488653/category_11689003.html</a></p>
+
     </div>
 
     
@@ -298,6 +312,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/09/11/ubuntu/" rel="next" title="ubuntu">
+                  ubuntu <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
