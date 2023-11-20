@@ -27,7 +27,7 @@
 <meta property="og:description" content="Time series tasks, RNN LSTM and Transformers. (building)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-08-23T01:27:55.000Z">
-<meta property="article:modified_time" content="2023-11-20T00:56:22.032Z">
+<meta property="article:modified_time" content="2023-11-20T02:46:10.630Z">
 <meta property="article:author" content="Shangyi Guo">
 <meta property="article:tag" content="time series">
 <meta name="twitter:card" content="summary">
@@ -112,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#catalog"><span class="nav-number">1.</span> <span class="nav-text">catalog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#time-series-task"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">time series task</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Traditional-methods"><span class="nav-number">3.</span> <span class="nav-text">Traditional methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overall"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">overall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prophet"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">prophet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARIMA-autoregressive-integrated-moving-average"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">ARIMA (autoregressive integrated moving average)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ETS-exponential-smoothing"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">ETS (exponential smoothing)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DeepLearning-methods"><span class="nav-number">4.</span> <span class="nav-text">DeepLearning methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN-and-LSTM"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">RNN and LSTM:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transformers"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">Transformers:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spatial-and-Temporal"><span class="nav-number">5.</span> <span class="nav-text">Spatial and Temporal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Future"><span class="nav-number">6.</span> <span class="nav-text">Future</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cite"><span class="nav-number">7.</span> <span class="nav-text">cite</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#catalog"><span class="nav-number">1.</span> <span class="nav-text">catalog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#time-series-task"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">time series task</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Traditional-methods"><span class="nav-number">3.</span> <span class="nav-text">Traditional methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#overall"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">overall</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prophet"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">prophet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARIMA-autoregressive-integrated-moving-average"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">ARIMA (autoregressive integrated moving average)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ETS-exponential-smoothing"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">ETS (exponential smoothing)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shapelets"><span class="nav-number">3.0.0.5.</span> <span class="nav-text">shapelets</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DeepLearning-methods"><span class="nav-number">4.</span> <span class="nav-text">DeepLearning methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN-and-LSTM"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">RNN and LSTM:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transformers"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">Transformers:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spatial-and-Temporal"><span class="nav-number">5.</span> <span class="nav-text">Spatial and Temporal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Future"><span class="nav-number">6.</span> <span class="nav-text">Future</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cite"><span class="nav-number">7.</span> <span class="nav-text">cite</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,7 +209,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-20 08:56:22" itemprop="dateModified" datetime="2023-11-20T08:56:22+08:00">2023-11-20</time>
+      <time title="Modified: 2023-11-20 10:46:10" itemprop="dateModified" datetime="2023-11-20T10:46:10+08:00">2023-11-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -235,7 +235,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>251</span>
+      <span>296</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -289,15 +289,24 @@
 </ol>
 <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h4 id="time-series-task"><a href="#time-series-task" class="headerlink" title="time series task"></a>time series task</h4><p>A reliable and efficient representation of multivariate time series is crucial in various downstream machine learning tasks.<br>In multivariate time series forecasting, each variable depends on its historical values and there are inter-dependencies among variables as well.<br>Models have to be designed to capture both intra and inter relationships among the time series.</p>
 <h1 id="Traditional-methods"><a href="#Traditional-methods" class="headerlink" title="Traditional methods"></a>Traditional methods</h1><h4 id="overall"><a href="#overall" class="headerlink" title="overall"></a>overall</h4><p>These method like ARIMA and ETS for example,have statistical interpretability while lack adaptability and are limited when trying to capture non-linear relationships.</p>
-<h4 id="prophet"><a href="#prophet" class="headerlink" title="prophet"></a>prophet</h4><h4 id="ARIMA-autoregressive-integrated-moving-average"><a href="#ARIMA-autoregressive-integrated-moving-average" class="headerlink" title="ARIMA (autoregressive integrated moving average)"></a>ARIMA (autoregressive integrated moving average)</h4><h4 id="ETS-exponential-smoothing"><a href="#ETS-exponential-smoothing" class="headerlink" title="ETS (exponential smoothing)"></a>ETS (exponential smoothing)</h4><h1 id="DeepLearning-methods"><a href="#DeepLearning-methods" class="headerlink" title="DeepLearning methods"></a>DeepLearning methods</h1><h4 id="RNN-and-LSTM"><a href="#RNN-and-LSTM" class="headerlink" title="RNN and LSTM:"></a>RNN and LSTM:</h4><h4 id="Transformers"><a href="#Transformers" class="headerlink" title="Transformers:"></a>Transformers:</h4><ul>
-<li>Vanilla Transformer</li>
-<li>Informer (AAAI 2020)</li>
-<li>Autoformer (NeurIPS 2021)</li>
-<li>CrossFormer</li>
-<li>PatchTST</li>
-<li>FEDformer (2022)</li>
-<li>TSAT (2022)</li>
-<li>iTransformer<br>iTransformer is a new method came out in 2023 which shows SOTA performance now.</li>
+<h4 id="prophet"><a href="#prophet" class="headerlink" title="prophet"></a>prophet</h4><h4 id="ARIMA-autoregressive-integrated-moving-average"><a href="#ARIMA-autoregressive-integrated-moving-average" class="headerlink" title="ARIMA (autoregressive integrated moving average)"></a>ARIMA (autoregressive integrated moving average)</h4><h4 id="ETS-exponential-smoothing"><a href="#ETS-exponential-smoothing" class="headerlink" title="ETS (exponential smoothing)"></a>ETS (exponential smoothing)</h4><h4 id="shapelets"><a href="#shapelets" class="headerlink" title="shapelets"></a>shapelets</h4><h1 id="DeepLearning-methods"><a href="#DeepLearning-methods" class="headerlink" title="DeepLearning methods"></a>DeepLearning methods</h1><h4 id="RNN-and-LSTM"><a href="#RNN-and-LSTM" class="headerlink" title="RNN and LSTM:"></a>RNN and LSTM:</h4><p>RNN (Recurrent Neural Networks),is designed to process sequential data.<br>LSTM (Long Short-Term Memory) is designed to capture both the short and longterm patterns within sequential inputs and alleviate gradient vanishing and exploding problems in RNN models</p>
+<h4 id="Transformers"><a href="#Transformers" class="headerlink" title="Transformers:"></a>Transformers:</h4><ul>
+<li><p>Vanilla Transformer</p>
+</li>
+<li><p>Informer (AAAI 2020)</p>
+</li>
+<li><p>Autoformer (NeurIPS 2021)</p>
+</li>
+<li><p>CrossFormer</p>
+</li>
+<li><p>PatchTST</p>
+</li>
+<li><p>FEDformer (2022)</p>
+</li>
+<li><p>TSAT (2022)<br>this method is transformer with GNN</p>
+</li>
+<li><p>iTransformer<br>iTransformer is a new method came out in 2023 which shows SOTA performance now.</p>
+</li>
 </ul>
 <p>Basicly this model adopted some slight changes based on vanilla Transformer to allow:<br>1.project the origin series into “Variate Token”,which means instead of including 1 step of all variates,the token now include all step of 1 variate.</p>
 <h1 id="Spatial-and-Temporal"><a href="#Spatial-and-Temporal" class="headerlink" title="Spatial and Temporal"></a>Spatial and Temporal</h1><ul>
