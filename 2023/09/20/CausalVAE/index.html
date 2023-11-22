@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:notguoshangyi@outlook.com.com || fa fa-envelope"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="CausalVAE:Structured Causal Disentanglement in Variational Autoencoder">
+    <meta name="description" content="CVPR 2021">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CausalVAE">
 <meta property="og:url" content="https://captaincccp.github.io/2023/09/20/CausalVAE/">
 <meta property="og:site_name" content="尚 Shawn&#39;s Personal Page">
-<meta property="og:description" content="CausalVAE:Structured Causal Disentanglement in Variational Autoencoder">
+<meta property="og:description" content="CVPR 2021">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-20T05:11:29.000Z">
-<meta property="article:modified_time" content="2023-09-20T05:13:25.130Z">
+<meta property="article:modified_time" content="2023-11-22T13:28:28.608Z">
 <meta property="article:author" content="Shangyi Guo">
 <meta property="article:tag" content="causal AI">
 <meta property="article:tag" content="math">
@@ -114,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Background-knowledges"><span class="nav-number">1.0.1.</span> <span class="nav-text">Background knowledges</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -149,13 +149,6 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/08/07/Papers-reading-23/" rel="bookmark">
-        <time class="popular-posts-time">2023-08-07</time>
-        <br>
-      Papers-read-2023
-      </a>
-    </li>
-    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/2023/08/06/causal/" rel="bookmark">
         <time class="popular-posts-time">2023-08-06</time>
         <br>
@@ -163,10 +156,17 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/08/23/time-series/" rel="bookmark">
-        <time class="popular-posts-time">2023-08-23</time>
+      <a class="popular-posts-link" href="/2023/11/20/Generative%20models/" rel="bookmark">
+        <time class="popular-posts-time">2023-11-20</time>
         <br>
-      time-series
+      Generative models
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/2023/08/07/Papers-reading-23/" rel="bookmark">
+        <time class="popular-posts-time">2023-08-07</time>
+        <br>
+      Papers-read-2023
       </a>
     </li>
   </ul>
@@ -217,9 +217,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-09-20 13:11:29 / Modified: 13:13:25" itemprop="dateCreated datePublished" datetime="2023-09-20T13:11:29+08:00">2023-09-20</time>
+      <time title="Created: 2023-09-20 13:11:29" itemprop="dateCreated datePublished" datetime="2023-09-20T13:11:29+08:00">2023-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-22 21:28:28" itemprop="dateModified" datetime="2023-11-22T21:28:28+08:00">2023-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -227,7 +233,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/learning-notes/" itemprop="url" rel="index"><span itemprop="name">learning notes</span></a>
+          <a href="/categories/papers/" itemprop="url" rel="index"><span itemprop="name">papers</span></a>
         </span>
     </span>
 
@@ -245,7 +251,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>7</span>
+      <span>60</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -262,9 +268,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><span id="more"></span>  
+    <div class="post-body" itemprop="articleBody"><pre><code>CVPR 2021
+</code></pre>
+<span id="more"></span>  
 
-<h1 id="CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><a href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder" class="headerlink" title="CausalVAE:Structured Causal Disentanglement in Variational Autoencoder"></a>CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</h1>
+<h1 id="CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><a href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder" class="headerlink" title="CausalVAE:Structured Causal Disentanglement in Variational Autoencoder"></a>CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</h1><h3 id="Background-knowledges"><a href="#Background-knowledges" class="headerlink" title="Background knowledges"></a>Background knowledges</h3><ul>
+<li>Disentangled Representation<br>seperate the representation of features into individual fractors that are independent to each other.<br>The other fractors keep unchanged and the one single fractor of the generated data changes while one fractor changes.<br>It aims to find a lower dimentional, explainable abstact representation of high dimentional data.</li>
+</ul>
+
     </div>
 
     
@@ -357,13 +368,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">5k</span>
+    <span title="Word count total">11k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">18 mins.</span>
+    <span title="Reading time total">41 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
