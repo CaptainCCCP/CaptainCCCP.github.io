@@ -19,29 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:notguoshangyi@outlook.com.com || fa fa-envelope"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="papers that I’ve read in 2023.">
+    <meta name="description" content="CVPR 2021">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Papers-read-2023">
-<meta property="og:url" content="https://captaincccp.github.io/2023/08/07/Papers-reading-23/">
+<meta property="og:title" content="CausalVAE">
+<meta property="og:url" content="https://captaincccp.github.io/CausalVAE/">
 <meta property="og:site_name" content="尚 Shawn&#39;s Personal Page">
-<meta property="og:description" content="papers that I’ve read in 2023.">
+<meta property="og:description" content="CVPR 2021">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-07T13:07:48.000Z">
-<meta property="article:modified_time" content="2023-11-22T14:46:05.744Z">
+<meta property="article:published_time" content="2023-09-20T05:11:29.000Z">
+<meta property="article:modified_time" content="2023-11-22T13:28:28.608Z">
 <meta property="article:author" content="Shangyi Guo">
 <meta property="article:tag" content="causal AI">
-<meta property="article:tag" content="machine learning">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="generative models">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://captaincccp.github.io/2023/08/07/Papers-reading-23/">
+<link rel="canonical" href="https://captaincccp.github.io/CausalVAE/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/2023/08/07/Papers-reading-23/","path":"2023/08/07/Papers-reading-23/","title":"Papers-read-2023"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/CausalVAE/","path":"CausalVAE/","title":"CausalVAE"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Papers-read-2023 | 尚 Shawn's Personal Page</title>
+<title>CausalVAE | 尚 Shawn's Personal Page</title>
   
 
 
@@ -113,7 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#last-edited-2023-8-11"><span class="nav-number">1.</span> <span class="nav-text">last edited 2023.8.11</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#August"><span class="nav-number">2.</span> <span class="nav-text">August</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-9-Causality-for-Machine-Learning"><span class="nav-number">2.0.1.</span> <span class="nav-text">8.9 Causality for Machine Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-8-11-Lung-nodule-detection-algorithm-based-on-rank-correlation-causal-structure-learning"><span class="nav-number">2.0.2.</span> <span class="nav-text">2023.8.11 Lung nodule detection algorithm based on rank correlation causal structure learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-8-11-Toward-Causal-Representation-Learning"><span class="nav-number">2.0.3.</span> <span class="nav-text">2023.8.11 Toward Causal Representation Learning</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#July"><span class="nav-number">3.</span> <span class="nav-text">July</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#June"><span class="nav-number">4.</span> <span class="nav-text">June</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#May"><span class="nav-number">5.</span> <span class="nav-text">May</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#April"><span class="nav-number">6.</span> <span class="nav-text">April</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#March"><span class="nav-number">7.</span> <span class="nav-text">March</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#February"><span class="nav-number">8.</span> <span class="nav-text">February</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#January"><span class="nav-number">9.</span> <span class="nav-text">January</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><span class="nav-number">1.</span> <span class="nav-text">CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Background-knowledges"><span class="nav-number">1.0.1.</span> <span class="nav-text">Background knowledges</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -148,14 +149,21 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/09/20/CausalVAE/" rel="bookmark">
-        <time class="popular-posts-time">2023-09-20</time>
+      <a class="popular-posts-link" href="/causal/" rel="bookmark">
+        <time class="popular-posts-time">2023-08-06</time>
         <br>
-      CausalVAE
+      causal
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/11/20/Generative%20models/" rel="bookmark">
+      <a class="popular-posts-link" href="/Papers-reading-23/" rel="bookmark">
+        <time class="popular-posts-time">2023-08-07</time>
+        <br>
+      Papers-read-2023
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/Generative%20models/" rel="bookmark">
         <time class="popular-posts-time">2023-11-20</time>
         <br>
       Generative models
@@ -181,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/07/Papers-reading-23/">
+    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/CausalVAE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/self.png">
@@ -194,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Papers-read-2023 | 尚 Shawn's Personal Page">
+      <meta itemprop="name" content="CausalVAE | 尚 Shawn's Personal Page">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Papers-read-2023
+          CausalVAE
         </h1>
 
         <div class="post-meta-container">
@@ -210,14 +218,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-08-07 21:07:48" itemprop="dateCreated datePublished" datetime="2023-08-07T21:07:48+08:00">2023-08-07</time>
+      <time title="Created: 2023-09-20 13:11:29" itemprop="dateCreated datePublished" datetime="2023-09-20T13:11:29+08:00">2023-09-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-22 22:46:05" itemprop="dateModified" datetime="2023-11-22T22:46:05+08:00">2023-11-22</time>
+      <time title="Modified: 2023-11-22 21:28:28" itemprop="dateModified" datetime="2023-11-22T21:28:28+08:00">2023-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -243,7 +251,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>301</span>
+      <span>60</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -260,27 +268,14 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>papers that I’ve read in 2023.</p>
-<span id="more"></span>
-
-
-<h1 id="last-edited-2023-8-11"><a href="#last-edited-2023-8-11" class="headerlink" title="last edited 2023.8.11"></a>last edited 2023.8.11</h1><h1 id="August"><a href="#August" class="headerlink" title="August"></a>August</h1><h3 id="8-9-Causality-for-Machine-Learning"><a href="#8-9-Causality-for-Machine-Learning" class="headerlink" title="8.9 Causality for Machine Learning"></a>8.9 Causality for Machine Learning</h3><h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><pre><code>some of causality works is already in the process of entering the machine learning mainstream, in particular the view that causal modeling can lead to more invariant or robust models.
-
-Some think we are now in the middle of third revolution of information, which is also likely a conserved quantity that could only be converted or harvested rather than generating it from air.The first industrial revolutions rendered energy a universal currency; the same may be happening to information.
-One can argue that the present revolution has two components: 
-- Computer Science and AI manipulatiing symbols
-- About learning,extract information also from unstructured data
-In recent years, genuine connections between machine learning and causality have emerged, and we will argue that these connections are crucial if we want to make progress on the major open problems of AI.
+    <div class="post-body" itemprop="articleBody"><pre><code>CVPR 2021
 </code></pre>
-<h5 id="2"><a href="#2" class="headerlink" title="2"></a>2</h5><h3 id="2023-8-11-Lung-nodule-detection-algorithm-based-on-rank-correlation-causal-structure-learning"><a href="#2023-8-11-Lung-nodule-detection-algorithm-based-on-rank-correlation-causal-structure-learning" class="headerlink" title="2023.8.11 Lung nodule detection algorithm based on rank correlation causal structure learning"></a>2023.8.11 Lung nodule detection algorithm based on rank correlation causal structure learning</h3><pre><code>combine causal inference and machine learning in order to classify lung nodules.
-The whole process is defined in three parts:
-- First they obtain possible neighbor nodes(skeletons of the causal network) for both computed feature and semantic feature nodes from the input lung nodule dataset.
-- Use score based methods and algorithms to get the final causal structure network.
-- Feature selection based on the causal structure network diagram, build a subset of features by selecting computational feature nodes related to semantic fearure prediction.And train a calssifier with this new dataset to predict the level of semantic features.
-</code></pre>
-<h3 id="2023-8-11-Toward-Causal-Representation-Learning"><a href="#2023-8-11-Toward-Causal-Representation-Learning" class="headerlink" title="2023.8.11 Toward Causal Representation Learning"></a>2023.8.11 Toward Causal Representation Learning</h3><pre><code>From Fig.2. and Fig.3.,we can tell a relation that even a sparse change of causal variable can lead to dense like pixel level change.
-</code></pre>
-<h1 id="July"><a href="#July" class="headerlink" title="July"></a>July</h1><h1 id="June"><a href="#June" class="headerlink" title="June"></a>June</h1><h1 id="May"><a href="#May" class="headerlink" title="May"></a>May</h1><h1 id="April"><a href="#April" class="headerlink" title="April"></a>April</h1><h1 id="March"><a href="#March" class="headerlink" title="March"></a>March</h1><h1 id="February"><a href="#February" class="headerlink" title="February"></a>February</h1><h1 id="January"><a href="#January" class="headerlink" title="January"></a>January</h1>
+<span id="more"></span>  
+
+<h1 id="CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder"><a href="#CausalVAE-Structured-Causal-Disentanglement-in-Variational-Autoencoder" class="headerlink" title="CausalVAE:Structured Causal Disentanglement in Variational Autoencoder"></a>CausalVAE:Structured Causal Disentanglement in Variational Autoencoder</h1><h3 id="Background-knowledges"><a href="#Background-knowledges" class="headerlink" title="Background knowledges"></a>Background knowledges</h3><ul>
+<li>Disentangled Representation<br>seperate the representation of features into individual fractors that are independent to each other.<br>The other fractors keep unchanged and the one single fractor of the generated data changes while one fractor changes.<br>It aims to find a lower dimentional, explainable abstact representation of high dimentional data.</li>
+</ul>
+
     </div>
 
     
@@ -317,20 +312,21 @@ The whole process is defined in three parts:
 
           <div class="post-tags">
               <a href="/tags/causal-AI/" rel="tag"><i class="fa fa-tag"></i> causal AI</a>
-              <a href="/tags/machine-learning/" rel="tag"><i class="fa fa-tag"></i> machine learning</a>
+              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+              <a href="/tags/generative-models/" rel="tag"><i class="fa fa-tag"></i> generative models</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/06/causal/" rel="prev" title="causal">
-                  <i class="fa fa-angle-left"></i> causal
+                <a href="/ubuntu/" rel="prev" title="ubuntu">
+                  <i class="fa fa-angle-left"></i> ubuntu
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/11/Differential-Equation/" rel="next" title="Differential Equation">
-                  Differential Equation <i class="fa fa-angle-right"></i>
+                <a href="/Generative%20models/" rel="next" title="Generative models">
+                  Generative models <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

@@ -19,29 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:notguoshangyi@outlook.com.com || fa fa-envelope"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="causal AI learning (building)">
+    <meta name="description" content="Learning notes of DDPM.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="causal">
-<meta property="og:url" content="https://captaincccp.github.io/2023/08/06/causal/">
+<meta property="og:title" content="DDPM">
+<meta property="og:url" content="https://captaincccp.github.io/DDPM-learn/">
 <meta property="og:site_name" content="尚 Shawn&#39;s Personal Page">
-<meta property="og:description" content="causal AI learning (building)">
+<meta property="og:description" content="Learning notes of DDPM.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-06T13:03:51.000Z">
-<meta property="article:modified_time" content="2023-11-22T14:46:34.408Z">
+<meta property="article:published_time" content="2023-08-05T14:39:27.000Z">
+<meta property="article:modified_time" content="2023-11-22T14:47:36.153Z">
 <meta property="article:author" content="Shangyi Guo">
-<meta property="article:tag" content="causal AI">
-<meta property="article:tag" content="math">
+<meta property="article:tag" content="Generative probabilistic model">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://captaincccp.github.io/2023/08/06/causal/">
+<link rel="canonical" href="https://captaincccp.github.io/DDPM-learn/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/2023/08/06/causal/","path":"2023/08/06/causal/","title":"causal"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/DDPM-learn/","path":"DDPM-learn/","title":"DDPM"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>causal | 尚 Shawn's Personal Page</title>
+<title>DDPM | 尚 Shawn's Personal Page</title>
   
 
 
@@ -113,7 +112,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background-knowledges"><span class="nav-number">1.</span> <span class="nav-text">Background knowledges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">基于约束的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">典型算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markov-Equivalence-Class%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="nav-number">1.1.3.</span> <span class="nav-text">Markov Equivalence Class马尔科夫等价类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%88%86%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95-score-based"><span class="nav-number">1.2.</span> <span class="nav-text">基于分数的方法 score-based</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Causal-inference"><span class="nav-number">2.</span> <span class="nav-text">Causal inference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DDPM%E9%80%90%E6%AD%A5%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">DDPM逐步学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E5%90%91%E8%BF%87%E7%A8%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">前向过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E5%90%91%E8%BF%87%E7%A8%8B"><span class="nav-number">1.0.2.</span> <span class="nav-text">后向过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E7%9B%AE%E6%A0%87"><span class="nav-number">1.0.3.</span> <span class="nav-text">训练目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E4%BC%AA%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B"><span class="nav-number">1.0.4.</span> <span class="nav-text">训练伪代码如下</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%87%E6%A0%B7%E8%BF%87%E7%A8%8B"><span class="nav-number">1.0.5.</span> <span class="nav-text">采样过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B"><span class="nav-number">1.0.6.</span> <span class="nav-text">改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.0.7.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,23 +140,6 @@
     </div>
 
     
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    Related Posts
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/2023/09/20/CausalVAE/" rel="bookmark">
-        <time class="popular-posts-time">2023-09-20</time>
-        <br>
-      CausalVAE
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
   </aside>
 
 
@@ -174,7 +156,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/2023/08/06/causal/">
+    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/DDPM-learn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/self.png">
@@ -187,12 +169,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="causal | 尚 Shawn's Personal Page">
+      <meta itemprop="name" content="DDPM | 尚 Shawn's Personal Page">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          causal
+          DDPM
         </h1>
 
         <div class="post-meta-container">
@@ -203,14 +185,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-08-06 21:03:51" itemprop="dateCreated datePublished" datetime="2023-08-06T21:03:51+08:00">2023-08-06</time>
+      <time title="Created: 2023-08-05 22:39:27" itemprop="dateCreated datePublished" datetime="2023-08-05T22:39:27+08:00">2023-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-11-22 22:46:34" itemprop="dateModified" datetime="2023-11-22T22:46:34+08:00">2023-11-22</time>
+      <time title="Modified: 2023-11-22 22:47:36" itemprop="dateModified" datetime="2023-11-22T22:47:36+08:00">2023-11-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -218,7 +200,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/areas/" itemprop="url" rel="index"><span itemprop="name">areas</span></a>
+          <a href="/categories/papers/" itemprop="url" rel="index"><span itemprop="name">papers</span></a>
         </span>
     </span>
 
@@ -236,14 +218,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>289</span>
+      <span>946</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -253,38 +235,83 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>causal AI learning (building)</p>
-<span id="more"></span>  
-<h1 id="Background-knowledges"><a href="#Background-knowledges" class="headerlink" title="Background knowledges"></a>Background knowledges</h1><h2 id="基于约束的方法"><a href="#基于约束的方法" class="headerlink" title="基于约束的方法"></a>基于约束的方法</h2><h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3><ul>
-<li><p>3 kinds:</p>
-</li>
-<li><p>chain    X-&gt;Z-&gt;Y</p>
-</li>
-<li><p>fork     X&lt;-Z-&gt;Y<br>  Z是X和Y的共因，如果X发生改变，Y很有可能也应该改变<br>  when the middle Z is given,X and Y won’t be affected anymore.</p>
-</li>
-<li><p>collider x-&gt;Z&lt;-Y<br>在没有given Z时，X和Y是独立的<br>  when the middle Z is given,X&#x2F;Y would need to change to make sure Z won’t change while Y&#x2F;X is changing</p>
-</li>
-<li><p>Path can’t be blocked by S(node set).</p>
-</li>
-<li><p>blocked:</p>
+    <div class="post-body" itemprop="articleBody"><pre><code>Learning notes of DDPM.
+</code></pre>
+<span id="more"></span>
+<h1 id="DDPM逐步学习"><a href="#DDPM逐步学习" class="headerlink" title="DDPM逐步学习"></a>DDPM逐步学习</h1><h3 id="前向过程"><a href="#前向过程" class="headerlink" title="前向过程"></a>前向过程</h3><p>x0-&gt;xt</p>
 <ul>
-<li>given Z when chain&#x2F;fork</li>
-<li>not given Z(and its son nodes) when collider</li>
+<li>x0真实图像</li>
+<li>xt最终噪声</li>
+<li>q(xt|xt-1)以前一个状态为均值的高斯分布，从这里采xt</li>
+<li>上面一行的分布方差为beta t (t属于1-T)</li>
+<li>T步数、beta 1和beta t是需要设置的</li>
 </ul>
-</li>
-<li><p>D-Seperation:<br>  when every path between X and Y is blocked by Z</p>
-</li>
-<li><p>Markovian assumption</p>
-</li>
-<li><p>Faithfulness assumption<br>由于以上两个假设我们可以通过given数据推出对应的Markov等价类</p>
-</li>
+<pre><code class="python">betas = torch.linspace(start=0.0001, end=0.02,steps=1000)
+</code></pre>
+<ul>
+<li>linspace()生成随机数<br>但是其实xt并不是直接通过q(xt|xt-1)得到的，还要经过重参数化<br>重参数化介绍TODO</li>
 </ul>
-<h3 id="典型算法"><a href="#典型算法" class="headerlink" title="典型算法"></a>典型算法</h3><p>IC、PC、FCI、RFCI、GFCI<br>基本思想是1.通过数据找到条件独立性列表(cond. independences) 2.通过条件独立性列表得到DAGs有向无环图</p>
-<h3 id="Markov-Equivalence-Class马尔科夫等价类"><a href="#Markov-Equivalence-Class马尔科夫等价类" class="headerlink" title="Markov Equivalence Class马尔科夫等价类"></a>Markov Equivalence Class马尔科夫等价类</h3><ul>
-<li>可以由同一组d-seperation得到的图s</li>
-<li>马尔科夫等价类中的图有相同的骨架skeleton和V-结构<br>比如chain和fork的3中图就有相同的V结构</li>
+<pre><code class="python">betas = torch.linspace(start=0.0001, end=0.02,steps=1000)
+noise = torch.randn_like(x_0)
+xt = sqrt(1-betas[t] * xt-1 + sqrt(betas[t])*noise)  # 均值和方差开根乘噪声
+</code></pre>
+<p>torch.randn_like()返回与输入大小相同的张量，填满了均值为0方差为1的随机数</p>
+<p>前向过程中可以取到任意一个xt，即从这个分布q(xt|x0)采样</p>
+<pre><code class="python"># 初始设置
+betas = torch.linspace(start=0.0001, end=0.02,steps=1000)
+alphas = 1-betas
+alphas_cum = torch.cumprod(alphas, 0) # 累乘得到alphat均值
+alphas_cum_s = torch.sqrt(alphas_cum)  # 根号alphat
+alphas_cum_sm = torch.sqrt(1-alphas_cum)  # 1-alphat
+
+# 重参数化得到xt
+noise = torch.randn_like(x_0)
+xt = alphas_cum_s[t] * x0 + alphas_cum_sm * noise)  # 均值和方差开根乘噪声
+</code></pre>
+<h3 id="后向过程"><a href="#后向过程" class="headerlink" title="后向过程"></a>后向过程</h3><p>反向的生成q(xt-1|xt,x0)是前向过程q(xt|xt-1)的后验概率分布<br>可以根据贝叶斯公式推导得到，并且它也是一个高斯分布，并且方差是个常量</p>
+<pre><code class="python"># 伪代码
+betas = torch.linspace(start=0.0001, end=0.02,steps=1000)
+alphas = 1-betas
+alphas_cum = torch.cumprod(alphas, 0) # 累乘得到alphat均值
+alphas_cum_prev = torch.cat((torch.tensor([1.0]),alphas_cum[:-1]),0)
+# torch.cat将两个矩阵连接起来
+posterior_variance = betas * (1 - alphas_cum_prev) / (1 - alphas_cum)
+</code></pre>
+<h3 id="训练目标"><a href="#训练目标" class="headerlink" title="训练目标"></a>训练目标</h3><p>生成的时候我们并没有x0，那么我们要如何得到q(xt-1|xt,x0)呢？<br>这时候我们构造一个分布p(xt-1|xt)<br>它的方差和q的一致<br>均值则更改，将x0改为x0(xt,t)，一个神经网络Unet，输入噪声图像xt和时间步t<br>通过一个损失函数缩小q和p之间的差距</p>
+<p>最后模型无法直接通过p来生成，因为变量太多<br>但是，我们根据前向过程知道xt可以由x0获得，因此变换一下，就可以得到有xt得x0的式子<br>代入到q(xt-1|xt,x0)的均值式子我们可以得到q(xt-1|xt,x0)的均值只与xt和前向过程中t时刻加的噪声有关<br>所以我们修改p(xt-1|xt)的均值，将模型修改为根据xt和t预测t时刻添加的噪声，就得到了一个常量比较多的目标函数  </p>
+<h3 id="训练伪代码如下"><a href="#训练伪代码如下" class="headerlink" title="训练伪代码如下"></a>训练伪代码如下</h3><pre><code class="python">betas = torch.linspace(start=0.0001, end=0.02,steps=1000)
+alphas = 1-betas
+alphas_cum = torch.cumprod(alphas, 0) # 累乘得到alphat均值
+alphas_cum_s = torch.sqrt(alphas_cum)  # 根号alphat
+alphas_cum_sm = torch.sqrt(1-alphas_cum)  # 1-alphat
+
+def diffusion_loss(model, x0, t, noise):
+    # 根据公式计算xt
+    xt = alphas_cum_s[t] * x0 + alphas_cum_sm[t] * noise
+    # Unet预测噪声
+    predicted_noise = model(xt, t)
+    # 计算loss
+    return mse_loss(predicted_noise, noise)
+   
+for i in len(data_loader):
+    # 从数据集里读取一个batch,是真实图片
+    x0 = next(data_loader)
+    # 采样时间步
+    t = torch.randint(0,1000,(batch_size,))
+    # 生成高斯噪声
+    noise = torch.randn_like(x_0)
+    loss = diffusion_loss(model, x0, t, noise)
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+</code></pre>
+<h3 id="采样过程"><a href="#采样过程" class="headerlink" title="采样过程"></a>采样过程</h3><p>真实的推理过程必须从T步开始向前逐步生成图片<br>先生成一个噪声图片，每个时间步t将xt传入模型预测噪声，然后采样一个噪声<br>由重参数化技巧和后验概率的均值方差，可以计算xt-1，最后直到T&#x3D;1  </p>
+<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><ul>
+<li>Improved DDPM对beta进行了改进，使得前向过程加噪声的过程更合理了一点</li>
+<li>Improved DDPM还指出可以通过直接设置更小的时间步s来减小采样的时间，具体是把s与原本的t对应</li>
 </ul>
-<h2 id="基于分数的方法-score-based"><a href="#基于分数的方法-score-based" class="headerlink" title="基于分数的方法 score-based"></a>基于分数的方法 score-based</h2><h1 id="Causal-inference"><a href="#Causal-inference" class="headerlink" title="Causal inference"></a>Causal inference</h1>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>[1]微信公众号 GiantPandaCV 一文弄懂Diffusion Model</p>
+
     </div>
 
     
@@ -320,21 +347,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/causal-AI/" rel="tag"><i class="fa fa-tag"></i> causal AI</a>
-              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+              <a href="/tags/Generative-probabilistic-model/" rel="tag"><i class="fa fa-tag"></i> Generative probabilistic model</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/05/DDPM-learn/" rel="prev" title="DDPM">
-                  <i class="fa fa-angle-left"></i> DDPM
+                <a href="/Marsilio%20Ficino/" rel="prev" title="Marsilio Ficino">
+                  <i class="fa fa-angle-left"></i> Marsilio Ficino
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/07/Papers-reading-23/" rel="next" title="Papers-read-2023">
-                  Papers-read-2023 <i class="fa fa-angle-right"></i>
+                <a href="/causal/" rel="next" title="causal">
+                  causal <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
