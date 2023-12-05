@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://captaincccp.github.io/DDPM/</loc>
+    <lastmod>2023-12-05</lastmod>
+  </url>
+  <url>
+    <loc>https://captaincccp.github.io/VQ-VAE/</loc>
+    <lastmod>2023-12-05</lastmod>
+  </url>
+  <url>
     <loc>https://captaincccp.github.io/%E3%80%90intern%E3%80%91BeijingAcademyOfScienceAndTechnology/</loc>
     <lastmod>2023-11-23</lastmod>
   </url>
@@ -10,10 +18,6 @@
   </url>
   <url>
     <loc>https://captaincccp.github.io/Differential-Equation/</loc>
-    <lastmod>2023-11-22</lastmod>
-  </url>
-  <url>
-    <loc>https://captaincccp.github.io/DDPM-learn/</loc>
     <lastmod>2023-11-22</lastmod>
   </url>
   <url>
