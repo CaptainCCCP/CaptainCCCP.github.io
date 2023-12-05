@@ -19,28 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:notguoshangyi@outlook.com.com || fa fa-envelope"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="summary of the works I’ve done in this intern experience.">
+    <meta name="description" content="causal AI learning (building)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【intern】Beijing Academy of Science And Technology">
-<meta property="og:url" content="https://captaincccp.github.io/%E3%80%90intern%E3%80%91BeijingAcademyOfScienceAndTechnology/">
+<meta property="og:title" content="【AREA-introduction】Causal Science">
+<meta property="og:url" content="https://captaincccp.github.io/%E3%80%90AREA-introduction%E3%80%91Causal%20Science/">
 <meta property="og:site_name" content="尚 Shawn&#39;s Personal Page">
-<meta property="og:description" content="summary of the works I’ve done in this intern experience.">
+<meta property="og:description" content="causal AI learning (building)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-22T14:55:27.000Z">
-<meta property="article:modified_time" content="2023-12-05T08:41:41.979Z">
+<meta property="article:published_time" content="2023-08-06T13:03:51.000Z">
+<meta property="article:modified_time" content="2023-12-05T08:49:18.703Z">
 <meta property="article:author" content="Shangyi Guo">
-<meta property="article:tag" content="summary">
+<meta property="article:tag" content="causal AI">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://captaincccp.github.io/%E3%80%90intern%E3%80%91BeijingAcademyOfScienceAndTechnology/">
+<link rel="canonical" href="https://captaincccp.github.io/%E3%80%90AREA-introduction%E3%80%91Causal%20Science/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/%E3%80%90intern%E3%80%91BeijingAcademyOfScienceAndTechnology/","path":"【intern】BeijingAcademyOfScienceAndTechnology/","title":"【intern】Beijing Academy of Science And Technology"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/%E3%80%90AREA-introduction%E3%80%91Causal%20Science/","path":"【AREA-introduction】Causal Science/","title":"【AREA-introduction】Causal Science"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>【intern】Beijing Academy of Science And Technology | 尚 Shawn's Personal Page</title>
+<title>【AREA-introduction】Causal Science | 尚 Shawn's Personal Page</title>
   
 
 
@@ -112,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brief-summary"><span class="nav-number">1.</span> <span class="nav-text">brief summary</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Place"><span class="nav-number">1.0.1.</span> <span class="nav-text">Place:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scrupulous-description"><span class="nav-number">2.</span> <span class="nav-text">scrupulous description</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background-knowledges"><span class="nav-number">1.</span> <span class="nav-text">Background knowledges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">基于约束的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">典型算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Markov-Equivalence-Class%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="nav-number">1.1.3.</span> <span class="nav-text">Markov Equivalence Class马尔科夫等价类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%88%86%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95-score-based"><span class="nav-number">1.2.</span> <span class="nav-text">基于分数的方法 score-based</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Causal-inference"><span class="nav-number">2.</span> <span class="nav-text">Causal inference</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -147,17 +148,17 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/time-series/" rel="bookmark">
-        <time class="popular-posts-time">2023-08-23</time>
+      <a class="popular-posts-link" href="/%E3%80%90PAPER-introduction%E3%80%91CausalVAE/" rel="bookmark">
+        <time class="popular-posts-time">2023-09-20</time>
         <br>
-      time-series
+      【PAPER-introduction】CausalVAE
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/ubuntu/" rel="bookmark">
-        <time class="popular-posts-time">2023-09-11</time>
+      <a class="popular-posts-link" href="/%E3%80%90PAPER-summary%E3%80%91Papers%20read%2023/" rel="bookmark">
+        <time class="popular-posts-time">2023-08-07</time>
         <br>
-      ubuntu
+      【PAPER-summary】Papers read 2023
       </a>
     </li>
   </ul>
@@ -180,7 +181,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/%E3%80%90intern%E3%80%91BeijingAcademyOfScienceAndTechnology/">
+    <link itemprop="mainEntityOfPage" href="https://captaincccp.github.io/%E3%80%90AREA-introduction%E3%80%91Causal%20Science/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/self.png">
@@ -193,12 +194,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="【intern】Beijing Academy of Science And Technology | 尚 Shawn's Personal Page">
+      <meta itemprop="name" content="【AREA-introduction】Causal Science | 尚 Shawn's Personal Page">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【intern】Beijing Academy of Science And Technology
+          【AREA-introduction】Causal Science
         </h1>
 
         <div class="post-meta-container">
@@ -209,14 +210,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-11-22 22:55:27" itemprop="dateCreated datePublished" datetime="2023-11-22T22:55:27+08:00">2023-11-22</time>
+      <time title="Created: 2023-08-06 21:03:51" itemprop="dateCreated datePublished" datetime="2023-08-06T21:03:51+08:00">2023-08-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-05 16:41:41" itemprop="dateModified" datetime="2023-12-05T16:41:41+08:00">2023-12-05</time>
+      <time title="Modified: 2023-12-05 16:49:18" itemprop="dateModified" datetime="2023-12-05T16:49:18+08:00">2023-12-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,7 +225,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/works/" itemprop="url" rel="index"><span itemprop="name">works</span></a>
+          <a href="/categories/areas/" itemprop="url" rel="index"><span itemprop="name">areas</span></a>
         </span>
     </span>
 
@@ -242,7 +243,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>133</span>
+      <span>289</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -259,17 +260,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>summary of the works I’ve done in this intern experience.</p>
-<span id="more"></span>
-<h1 id="brief-summary"><a href="#brief-summary" class="headerlink" title="brief summary"></a>brief summary</h1><h3 id="Place"><a href="#Place" class="headerlink" title="Place:"></a>Place:</h3><p>Institute of Urban Safety and Environmental Science, Beijing Academy of Science and Technology<br>Beijing, China, 07&#x2F;2023-08&#x2F;2023</p>
+    <div class="post-body" itemprop="articleBody"><p>causal AI learning (building)</p>
+<span id="more"></span>  
+<h1 id="Background-knowledges"><a href="#Background-knowledges" class="headerlink" title="Background knowledges"></a>Background knowledges</h1><h2 id="基于约束的方法"><a href="#基于约束的方法" class="headerlink" title="基于约束的方法"></a>基于约束的方法</h2><h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3><ul>
+<li><p>3 kinds:</p>
+</li>
+<li><p>chain    X-&gt;Z-&gt;Y</p>
+</li>
+<li><p>fork     X&lt;-Z-&gt;Y<br>  Z是X和Y的共因，如果X发生改变，Y很有可能也应该改变<br>  when the middle Z is given,X and Y won’t be affected anymore.</p>
+</li>
+<li><p>collider x-&gt;Z&lt;-Y<br>在没有given Z时，X和Y是独立的<br>  when the middle Z is given,X&#x2F;Y would need to change to make sure Z won’t change while Y&#x2F;X is changing</p>
+</li>
+<li><p>Path can’t be blocked by S(node set).</p>
+</li>
+<li><p>blocked:</p>
 <ul>
-<li>Contributed to the EU’s “Horizon 2020” AQ-Watch project.</li>
-<li>Optimized an existing CNN+LSTM deep learning system for immediate weather prediction, reducing the lengthy computational time of the complex NMP model, handling datasets over 200 GB.</li>
-<li>Managed a system developed in France, combining Python&#x2F;PyTorch and R with a user interface to control emissions and visualize pollution changes for governmental decision-making, similar to an EU tool.</li>
-<li>Collaborated in refining deep learning systems for time series prediction using transformer models.</li>
-<li>Developed new data processing codes for Transformer models, achieving improved prediction speed and accuracy, with outcomes pending publication.</li>
+<li>given Z when chain&#x2F;fork</li>
+<li>not given Z(and its son nodes) when collider</li>
 </ul>
-<h1 id="scrupulous-description"><a href="#scrupulous-description" class="headerlink" title="scrupulous description"></a>scrupulous description</h1>
+</li>
+<li><p>D-Seperation:<br>  when every path between X and Y is blocked by Z</p>
+</li>
+<li><p>Markovian assumption</p>
+</li>
+<li><p>Faithfulness assumption<br>由于以上两个假设我们可以通过given数据推出对应的Markov等价类</p>
+</li>
+</ul>
+<h3 id="典型算法"><a href="#典型算法" class="headerlink" title="典型算法"></a>典型算法</h3><p>IC、PC、FCI、RFCI、GFCI<br>基本思想是1.通过数据找到条件独立性列表(cond. independences) 2.通过条件独立性列表得到DAGs有向无环图</p>
+<h3 id="Markov-Equivalence-Class马尔科夫等价类"><a href="#Markov-Equivalence-Class马尔科夫等价类" class="headerlink" title="Markov Equivalence Class马尔科夫等价类"></a>Markov Equivalence Class马尔科夫等价类</h3><ul>
+<li>可以由同一组d-seperation得到的图s</li>
+<li>马尔科夫等价类中的图有相同的骨架skeleton和V-结构<br>比如chain和fork的3中图就有相同的V结构</li>
+</ul>
+<h2 id="基于分数的方法-score-based"><a href="#基于分数的方法-score-based" class="headerlink" title="基于分数的方法 score-based"></a>基于分数的方法 score-based</h2><h1 id="Causal-inference"><a href="#Causal-inference" class="headerlink" title="Causal inference"></a>Causal inference</h1>
     </div>
 
     
@@ -305,20 +327,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/summary/" rel="tag"><i class="fa fa-tag"></i> summary</a>
+              <a href="/tags/causal-AI/" rel="tag"><i class="fa fa-tag"></i> causal AI</a>
+              <a href="/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/The%20Hairy%20Ape/" rel="prev" title="The Hairy Ape">
-                  <i class="fa fa-angle-left"></i> The Hairy Ape
+                <a href="/%E3%80%90PAPER-introduction%E3%80%91DDPM/" rel="prev" title="【PAPER-introduction】DDPM">
+                  <i class="fa fa-angle-left"></i> 【PAPER-introduction】DDPM
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/The%20Three%20Penny%20Opera/" rel="next" title="The Three Penny Opera">
-                  The Three Penny Opera <i class="fa fa-angle-right"></i>
+                <a href="/%E3%80%90PAPER-summary%E3%80%91Papers%20read%2023/" rel="next" title="【PAPER-summary】Papers read 2023">
+                  【PAPER-summary】Papers read 2023 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
