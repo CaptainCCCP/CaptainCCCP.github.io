@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://captaincccp.github.io/ShakespeareSpeaks/</loc>
+    <lastmod>2023-12-05</lastmod>
+  </url>
+  <url>
+    <loc>https://captaincccp.github.io/TheThreePennyOpera/</loc>
+    <lastmod>2023-12-05</lastmod>
+  </url>
+  <url>
     <loc>https://captaincccp.github.io/DDPM/</loc>
     <lastmod>2023-12-05</lastmod>
   </url>
