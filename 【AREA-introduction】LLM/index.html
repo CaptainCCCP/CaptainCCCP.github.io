@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/pic/total.png">
 <meta property="article:published_time" content="2023-12-26T02:48:21.000Z">
-<meta property="article:modified_time" content="2024-03-06T11:32:16.984Z">
+<meta property="article:modified_time" content="2024-03-06T11:42:24.049Z">
 <meta property="article:author" content="Shangyi Guo">
 <meta property="article:tag" content="NLP">
 <meta property="article:tag" content="generative models">
@@ -115,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%8A%9B%E6%8E%92%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">模型能力排行</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%8A%9B%E6%8E%92%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">模型能力排行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-link"><span class="nav-number">2.</span> <span class="nav-text">quick link</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#info"><span class="nav-number">3.</span> <span class="nav-text">info</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">上下文窗口：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#database"><span class="nav-number">5.</span> <span class="nav-text">database</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#agent"><span class="nav-number">6.</span> <span class="nav-text">agent</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,7 +212,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-06 19:32:16" itemprop="dateModified" datetime="2024-03-06T19:32:16+08:00">2024-03-06</time>
+      <time title="Modified: 2024-03-06 19:42:24" itemprop="dateModified" datetime="2024-03-06T19:42:24+08:00">2024-03-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +245,7 @@
 <span id="more"></span>
 
 <h1 id="模型能力排行"><a href="#模型能力排行" class="headerlink" title="模型能力排行"></a><a target="_blank" rel="noopener" href="https://i.imgur.com/S6eIBRi.png">模型能力排行</a></h1><p>综合能力：<br><img src="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/pic/total.png" alt="综合能力"><br>分类能力：<br>信息抽取能力：<br>阅读理解能力：<br>数据分析能力：</p>
-<table>
+<h1 id="quick-link"><a href="#quick-link" class="headerlink" title="quick link"></a>quick link</h1><table>
 <thead>
 <tr>
 <th>大模型</th>
@@ -887,6 +887,53 @@
 <td></td>
 </tr>
 </tbody></table>
+<h1 id="info"><a href="#info" class="headerlink" title="info"></a>info</h1><p>| 参数 | 显存（推理）| 显存（微调）| 备注 |<br>|70B模型 | ~48GB | ~62GB |  |<br>|14B模型 | ~13GB | ~19GB |  |<br>| 7B模型 | ~8GB  | ~12GB |  |<br>| 2B模型 | ~3GB  | ~6GB  |  |</p>
+<h1 id="上下文窗口："><a href="#上下文窗口：" class="headerlink" title="上下文窗口："></a>上下文窗口：</h1><p>192K大约是35万汉字，100K大约8万汉字，32K大约2.5万字</p>
+<h1 id="database"><a href="#database" class="headerlink" title="database"></a>database</h1><ul>
+<li>MySQL</li>
+<li>MongoDB</li>
+<li>Redis</li>
+<li>Chroma is the open-source embedding database. </li>
+<li>Weaviate is an open source, AI-native vector database</li>
+<li>Milvus向量数据库</li>
+<li>pinecone</li>
+</ul>
+<h1 id="agent"><a href="#agent" class="headerlink" title="agent"></a>agent</h1><ul>
+<li><p>AutoGPT：</p>
+</li>
+<li><p>ProAgent：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/OpenBMB/ProAgent">https://github.com/OpenBMB/ProAgent</a><br>文章：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2311.10751">https://arxiv.org/abs/2311.10751</a></p>
+<ul>
+<li>自动建立workflow，并在需要时由LLM介入动态决策<ul>
+<li>数据流（如写长报告）和控制流（如分支判断）时由agent介入</li>
+<li>针对数据流建立了Agentic Workflow Description Language，一种JSON格式的描述来方便LLM内部通信，避免错误</li>
+<li>针对控制流用python</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MetaGPT：<br>主要是一个多专业agent协作完成编码的框架。<br>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.00352">https://arxiv.org/abs/2308.00352</a><br>受人类的SOPs（标准工作流程）启发，Meta完成了一个元编程框架，需要agent输出结构化的输出，并且以此来提高表现。重点在于每一个agent的输出都是高度结构化的高质量documents, design artifacts, flowcharts, and interface specifications.</p>
+</li>
+<li><p>CAMEL：还在持续更新*<br>为了解决用户并不是能很好地编写prompt的问题而产生<br>目标是使用最少的人类输入，也就是用户输入非常少，随后由agent来细化来实现目标的路径和方法</p>
+<ul>
+<li>角色扮演框架</li>
+<li>开源了一些代理、pipeline和分析工具<br>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2303.17760">https://arxiv.org/abs/2303.17760</a><br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/camel-ai/camel">https://github.com/camel-ai/camel</a></li>
+</ul>
+</li>
+<li><p>babyAGI：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/yoheinakajima/babyagi">https://github.com/yoheinakajima/babyagi</a><br>实操地址：<a target="_blank" rel="noopener" href="https://huggingface.co/spaces/NeuralInternet/BabyAGI">https://huggingface.co/spaces/NeuralInternet/BabyAGI</a><br>使用gpt-3.5&#x2F;Llama，是一个脚本，包含了一个取任务，完成任务的工作流程</p>
+</li>
+<li><p>Jarvis&#x2F;HuggingGPT：<br>Microsoft，由一个LLM作为中央controller，分割任务，控制协调另外的专业agent协助完成项目<br>项目地址<a target="_blank" rel="noopener" href="https://github.com/microsoft/JARVIS">https://github.com/microsoft/JARVIS</a></p>
+</li>
+<li><p>Cohere:<br>一个第三方RAG system allows LLMs to accurately answer questions and solve tasks using enterprise data as the source of truth<br><a target="_blank" rel="noopener" href="https://cohere.com/">https://cohere.com/</a></p>
+</li>
+<li><p>COGNOSYS：<br><a target="_blank" rel="noopener" href="https://www.cognosys.ai/">https://www.cognosys.ai/</a></p>
+</li>
+<li><p>Doanythingmachine:<br><a target="_blank" rel="noopener" href="https://www.doanythingmachine.com/">https://www.doanythingmachine.com/</a></p>
+</li>
+<li><p>alphakit.ai：<br>手机app构建agent<br><a target="_blank" rel="noopener" href="https://alphakit.ai/">https://alphakit.ai/</a><br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/agiresearch/OpenAGI">https://github.com/agiresearch/OpenAGI</a></p>
+</li>
+<li><p>AGIXT：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Josh-XT/AGiXT">https://github.com/Josh-XT/AGiXT</a></p>
+</li>
+</ul>
 
     </div>
 
