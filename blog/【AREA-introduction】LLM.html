@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"captaincccp.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","social":{"GitHub":"https://github.com/CaptainCCCP || fab fa-github","E-Mail":"mailto:shangyi.guo@nyu.edu || fa fa-envelope","Profolio":"https://shangyiguo.work || fa fa-briefcase"},"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Brief survey of LLM for project.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="【AREA-introduction】LLM">
+<meta property="og:url" content="https://captaincccp.github.io/blog/%E3%80%90AREA-introduction%E3%80%91LLM.html">
+<meta property="og:site_name" content="尚 Shawn&#39;s Personal Page">
+<meta property="og:description" content="Brief survey of LLM for project.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/pic/total.png">
+<meta property="article:published_time" content="2023-12-26T02:48:21.000Z">
+<meta property="article:modified_time" content="2024-03-06T11:50:27.048Z">
+<meta property="article:author" content="Shangyi Guo">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="generative models">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/pic/total.png">
+
+
+<link rel="canonical" href="https://captaincccp.github.io/blog/%E3%80%90AREA-introduction%E3%80%91LLM">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://captaincccp.github.io/blog/%E3%80%90AREA-introduction%E3%80%91LLM.html","path":"blog/【AREA-introduction】LLM.html","title":"【AREA-introduction】LLM"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【AREA-introduction】LLM | 尚 Shawn's Personal Page
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">尚 Shawn's Personal Page</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-blog"><a href="/blog/" rel="section"><i class="fa fa-book fa-fw"></i>blog</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%83%BD%E5%8A%9B%E6%8E%92%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">模型能力排行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#quick-link"><span class="nav-number">2.</span> <span class="nav-text">quick link</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#info"><span class="nav-number">3.</span> <span class="nav-text">info</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">上下文窗口：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#database"><span class="nav-number">5.</span> <span class="nav-text">database</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#agent"><span class="nav-number">6.</span> <span class="nav-text">agent</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Shangyi Guo"
+      src="/images/self.png">
+  <p class="site-author-name" itemprop="name">Shangyi Guo</p>
+  <div class="site-description" itemprop="description">NYU CUSP Student, Data Science/Deep Learning Enthusiast, and a Life-long Learner</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/CaptainCCCP" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CaptainCCCP" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:notguoshangyi@outlook.com.com" title="E-Mail → mailto:notguoshangyi@outlook.com.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="en"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">【AREA-introduction】LLM
+</h1>
+
+<div class="post-meta-container">
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <pre><code>Brief survey of LLM for project. 
+</code></pre>
+<span id="more"></span>
+
+<h1 id="模型能力排行"><a href="#模型能力排行" class="headerlink" title="模型能力排行"></a><a target="_blank" rel="noopener" href="https://i.imgur.com/S6eIBRi.png">模型能力排行</a></h1><p>综合能力：<br><img src="https://github.com/jeinlee1991/chinese-llm-benchmark/blob/main/pic/total.png" alt="综合能力"><br>分类能力：<br>信息抽取能力：<br>阅读理解能力：<br>数据分析能力：</p>
+<h1 id="quick-link"><a href="#quick-link" class="headerlink" title="quick link"></a>quick link</h1><table>
+<thead>
+<tr>
+<th>大模型</th>
+<th>机构</th>
+<th>类别</th>
+<th>链接</th>
+<th>价格</th>
+<th>context</th>
+<th>window</th>
+<th>发布时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GPT-4 Turbo</td>
+<td>openai</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://openai.com/product">https://openai.com/product</a></td>
+<td>Input: $0.01 &#x2F; 1K tokens Output: $0.03 &#x2F; 1K tokens”</td>
+<td>128K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GPT-4</td>
+<td>openai</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://openai.com/product">https://openai.com/product</a></td>
+<td>“Input: $0.03 &#x2F; 1K tokens Output: $0.06 &#x2F; 1K tokens”</td>
+<td>~25K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GPT-4-32K</td>
+<td>openai</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://openai.com/product">https://openai.com/product</a></td>
+<td>“Input: $0.06 &#x2F; 1K tokens Output: $0.12 &#x2F; 1K tokens”</td>
+<td>32K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GPT-3.5-turbo-1106</td>
+<td>openai</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://openai.com/product">https://openai.com/product</a></td>
+<td>“ $0.0010 &#x2F; 1K tokens $0.0020 &#x2F; 1K tokens”</td>
+<td>16K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GPT-3.5-turbo-instruct</td>
+<td>openai</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://openai.com/product">https://openai.com/product</a></td>
+<td>“ $0.0015 &#x2F; 1K tokens $0.0020 &#x2F; 1K tokens”</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Claude Instant</td>
+<td>Anthropic</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://www.anthropic.com/product">https://www.anthropic.com/product</a></td>
+<td>“$0.80&#x2F;million tokens $2.40&#x2F;million tokens”</td>
+<td>100K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Claude 2.0</td>
+<td>Anthropic</td>
+<td>商用</td>
+<td></td>
+<td>“$8.00&#x2F;million tokens $24.00&#x2F;million tokens”</td>
+<td>100K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Claude 2.1</td>
+<td>Anthropic</td>
+<td>商用</td>
+<td></td>
+<td>“$8.00&#x2F;million tokens $24.00&#x2F;million tokens”</td>
+<td>200K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Gemini Pro</td>
+<td>谷歌</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://deepmind.google/technologies/gemini/#introduction">https://deepmind.google/technologies/gemini/#introduction</a></td>
+<td>“free:60 chat &#x2F; min In: $0.00025 &#x2F; 1K characters ou:$0.0005 &#x2F; 1K char”</td>
+<td>不得超过 4MB</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PaLM</td>
+<td>谷歌</td>
+<td>商用</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bard</td>
+<td>谷歌</td>
+<td>商用</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>文心一言4.0(ERNIE-Bot 4.0)</td>
+<td>百度</td>
+<td>商用</td>
+<td></td>
+<td>“￥0.12 &#x2F; 1K tokens  ￥0.12 &#x2F; 1K tokens”</td>
+<td></td>
+<td></td>
+<td>2023.6</td>
+<td>价格网页</td>
+</tr>
+<tr>
+<td>文心一言3.5 8K(ERNIE-Bot-8K)</td>
+<td>百度</td>
+<td>商用</td>
+<td></td>
+<td>“￥0.024 &#x2F; 1K tokens ￥0.048 &#x2F; 1K tokens”</td>
+<td></td>
+<td></td>
+<td></td>
+<td>大模型平台</td>
+</tr>
+<tr>
+<td>文心一言3.5(ERNIE-Bot)</td>
+<td>百度</td>
+<td>商用</td>
+<td></td>
+<td>“￥0.012 &#x2F; 1K tokens ￥0.012 &#x2F; 1K tokens”</td>
+<td></td>
+<td></td>
+<td></td>
+<td>chat页面</td>
+</tr>
+<tr>
+<td>文心一言EB-turbo-AppBuilder专用版</td>
+<td>百度</td>
+<td>商用</td>
+<td></td>
+<td>“￥0.008 &#x2F; 1K tokens ￥0.008 &#x2F; 1K tokens”</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>讯飞星火v3.0</td>
+<td>科大讯飞</td>
+<td>商用</td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://xinghuo.xfyun.cn/sparkapi">https://xinghuo.xfyun.cn/sparkapi</a>	~￥0.03 &#x2F; 1K tokens</td>
+<td></td>
+<td></td>
+<td></td>
+<td>免费试用很多</td>
+</tr>
+<tr>
+<td>讯飞星火v1.5</td>
+<td>科大讯飞</td>
+<td>商用</td>
+<td></td>
+<td>~￥0.015 &#x2F; 1K tokens</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>腾讯混元标准版</td>
+<td>腾讯</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/hunyuan">https://cloud.tencent.com/product/hunyuan</a></td>
+<td>￥0.01 &#x2F; 1K</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>腾讯混元高级版</td>
+<td>腾讯</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/hunyuan">https://cloud.tencent.com/product/hunyuan</a></td>
+<td>￥0.1 &#x2F; 1K</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>“天工 SkyChat-MegaVerse”</td>
+<td>昆仑万维</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://model-platform.tiangong.cn/?channel=csearch_enter&utm_medium=csearch">https://model-platform.tiangong.cn/?channel=csearch_enter&amp;utm_medium=csearch</a></td>
+<td>￥0.005 &#x2F; 1K</td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://model-platform.tiangong.cn/?channel=cspeak_enter&utm_medium=cspeak">做一个agent活动</a>针对长文本</td>
+</tr>
+<tr>
+<td>AGI Sky-Saas-Search</td>
+<td>昆仑万维</td>
+<td>商用</td>
+<td></td>
+<td>￥0.18 &#x2F; 1K</td>
+<td></td>
+<td></td>
+<td></td>
+<td>针对搜索</td>
+</tr>
+<tr>
+<td>AGI Sky-Saas-Writing</td>
+<td>昆仑万维</td>
+<td>商用</td>
+<td></td>
+<td>需要咨询</td>
+<td></td>
+<td></td>
+<td></td>
+<td>针对写作</td>
+</tr>
+<tr>
+<td>Skywork-13B-Base</td>
+<td>昆仑万维</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://model-platform.tiangong.cn/">https://model-platform.tiangong.cn/</a></td>
+<td>开源</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Baichuan2-Turbo</td>
+<td>百川智能</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://www.baichuan-ai.com/home">https://www.baichuan-ai.com/home</a></td>
+<td>0.008元&#x2F;千tokens</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Baichuan2-Turbo-192k</td>
+<td>百川智能</td>
+<td>商用</td>
+<td></td>
+<td>0.016元&#x2F;千tokens</td>
+<td>192K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Baichuan2-53B</td>
+<td>百川智能</td>
+<td>商用</td>
+<td></td>
+<td>“8点前0.01元&#x2F;千tokens 其余时间0.02”</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Baichuan2-7B</td>
+<td>百川智能</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Baichuan2-13B</td>
+<td>百川智能</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>baichuan-7B</td>
+<td>百川智能</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>baichuan-13B-chat</td>
+<td>百川智能</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/baichuan-inc/Baichuan-13B">https://github.com/baichuan-inc/Baichuan-13B</a></td>
+<td>开源</td>
+<td>4K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>华为盘古</td>
+<td>华为</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ChatGLM-6B</td>
+<td>智谱AI</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/THUDM/ChatGLM-6B">github</a></td>
+<td></td>
+</tr>
+<tr>
+<td>智谱清源</td>
+<td>智谱AI</td>
+<td>商用</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>360智脑</td>
+<td>奇虎360</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://ai.360.cn/">https://ai.360.cn/</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>通义千问</td>
+<td>阿里巴巴</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://tongyi.aliyun.com/">https://tongyi.aliyun.com</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>通义千问Qwen-1.8B</td>
+<td>阿里巴巴</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>32K</td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://github.com/QwenLM/Qwen/blob/main/">github</a></td>
+<td></td>
+</tr>
+<tr>
+<td>通义千问Qwen-7B</td>
+<td>阿里巴巴</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>32K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>通义千问Qwen-14B</td>
+<td>阿里巴巴</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>8K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>通义千问Qwen-72B</td>
+<td>阿里巴巴</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td>32K</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>minimax</td>
+<td>minimax</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://api.minimax.chat/">https://api.minimax.chat</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tigerbot-7b-chat</td>
+<td>虎博科技</td>
+<td>商用&#x2F;开源</td>
+<td><a target="_blank" rel="noopener" href="https://www.tigerbot.com/">https://www.tigerbot.com/</a></td>
+<td>0.018元 &#x2F; 千tokens</td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://tigerbot.com/api-reference/chat">api界面</a></td>
+<td></td>
+</tr>
+<tr>
+<td>tigerbot-13b-chat</td>
+<td>虎博科技</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://tigerbot.com/api-reference/chat">https://tigerbot.com/api-reference/chat</a></td>
+<td>0.02元 &#x2F; 千tokens</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tigerbot-70b-chat</td>
+<td>虎博科技</td>
+<td></td>
+<td></td>
+<td>0.04元 &#x2F; 千tokens</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>chatglm-6b</td>
+<td>清华大学&amp;智谱AI</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/THUDM/ChatGLM-6B">https://github.com/THUDM/ChatGLM-6B</a>	开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LLaMA-2</td>
+<td>META</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LlaMA-13B</td>
+<td>META</td>
+<td>开源</td>
+<td></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Kimi Chat</td>
+<td>月之暗面</td>
+<td>商用</td>
+<td><a target="_blank" rel="noopener" href="https://www.yjpoo.com/site/1809.html">https://www.yjpoo.com/site/1809.html</a></td>
+<td></td>
+<td></td>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://kimi.moonshot.cn/">chat</a></td>
+<td></td>
+</tr>
+<tr>
+<td>belle-llama-7b-2m</td>
+<td>链家科技</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LianjiaTech/BELLE">https://github.com/LianjiaTech/BELLE</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BELLE-on-Open-Datasets</td>
+<td>链家科技</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LianjiaTech/BELLE">https://github.com/LianjiaTech/BELLE</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>belle-llama-13b-2m</td>
+<td>链家科技</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LianjiaTech/BELLE">https://github.com/LianjiaTech/BELLE</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>belle-llama-13b-ext</td>
+<td>链家科技</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LianjiaTech/BELLE">https://github.com/LianjiaTech/BELLE</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Ziya-LLaMA-13B-v1</td>
+<td>IDEA研究院</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IeXgq8blGoeVbpIlAUCAjA">https://mp.weixin.qq.com/s/IeXgq8blGoeVbpIlAUCAjA</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>phoenix-inst-chat-7b</td>
+<td>港中文</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/FreedomIntelligence/LLMZoo">https://github.com/FreedomIntelligence/LLMZoo</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>linly-chatflow-13b</td>
+<td>深圳大学</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CVI-SZU/Linly">https://github.com/CVI-SZU/Linly</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MOSS-003-SFT</td>
+<td>复旦大学</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/OpenLMLab/MOSS">https://github.com/OpenLMLab/MOSS</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AquilaChat-7B</td>
+<td>智源研究院</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/FlagAI-Open/FlagAI/blob/master/examples/Aquila/README.md">https://github.com/FlagAI-Open/FlagAI/blob/master/examples/Aquila/README.md</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tulu-30b</td>
+<td>allenai</td>
+<td>开源</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/allenai/open-instruct">https://github.com/allenai/open-instruct</a></td>
+<td>开源</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="info"><a href="#info" class="headerlink" title="info"></a>info</h1><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>显存（推理）</th>
+<th>显存（微调）</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>70B模型</td>
+<td>~48GB</td>
+<td>~62GB</td>
+<td></td>
+</tr>
+<tr>
+<td>14B模型</td>
+<td>~13GB</td>
+<td>~19GB</td>
+<td></td>
+</tr>
+<tr>
+<td>7B模型</td>
+<td>~8GB</td>
+<td>~12GB</td>
+<td></td>
+</tr>
+<tr>
+<td>2B模型</td>
+<td>~3GB</td>
+<td>~6GB</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="上下文窗口："><a href="#上下文窗口：" class="headerlink" title="上下文窗口："></a>上下文窗口：</h1><p>192K大约是35万汉字，100K大约8万汉字，32K大约2.5万字</p>
+<h1 id="database"><a href="#database" class="headerlink" title="database"></a>database</h1><ul>
+<li>MySQL</li>
+<li>MongoDB</li>
+<li>Redis</li>
+<li>Chroma is the open-source embedding database. </li>
+<li>Weaviate is an open source, AI-native vector database</li>
+<li>Milvus向量数据库</li>
+<li>pinecone</li>
+</ul>
+<h1 id="agent"><a href="#agent" class="headerlink" title="agent"></a>agent</h1><ul>
+<li><p>AutoGPT：</p>
+</li>
+<li><p>ProAgent：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/OpenBMB/ProAgent">https://github.com/OpenBMB/ProAgent</a><br>文章：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2311.10751">https://arxiv.org/abs/2311.10751</a></p>
+<ul>
+<li>自动建立workflow，并在需要时由LLM介入动态决策<ul>
+<li>数据流（如写长报告）和控制流（如分支判断）时由agent介入</li>
+<li>针对数据流建立了Agentic Workflow Description Language，一种JSON格式的描述来方便LLM内部通信，避免错误</li>
+<li>针对控制流用python</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MetaGPT：<br>主要是一个多专业agent协作完成编码的框架。<br>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2308.00352">https://arxiv.org/abs/2308.00352</a><br>受人类的SOPs（标准工作流程）启发，Meta完成了一个元编程框架，需要agent输出结构化的输出，并且以此来提高表现。重点在于每一个agent的输出都是高度结构化的高质量documents, design artifacts, flowcharts, and interface specifications.</p>
+</li>
+<li><p>CAMEL：还在持续更新*<br>为了解决用户并不是能很好地编写prompt的问题而产生<br>目标是使用最少的人类输入，也就是用户输入非常少，随后由agent来细化来实现目标的路径和方法</p>
+<ul>
+<li>角色扮演框架</li>
+<li>开源了一些代理、pipeline和分析工具<br>论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2303.17760">https://arxiv.org/abs/2303.17760</a><br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/camel-ai/camel">https://github.com/camel-ai/camel</a></li>
+</ul>
+</li>
+<li><p>babyAGI：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/yoheinakajima/babyagi">https://github.com/yoheinakajima/babyagi</a><br>实操地址：<a target="_blank" rel="noopener" href="https://huggingface.co/spaces/NeuralInternet/BabyAGI">https://huggingface.co/spaces/NeuralInternet/BabyAGI</a><br>使用gpt-3.5&#x2F;Llama，是一个脚本，包含了一个取任务，完成任务的工作流程</p>
+</li>
+<li><p>Jarvis&#x2F;HuggingGPT：<br>Microsoft，由一个LLM作为中央controller，分割任务，控制协调另外的专业agent协助完成项目<br>项目地址<a target="_blank" rel="noopener" href="https://github.com/microsoft/JARVIS">https://github.com/microsoft/JARVIS</a></p>
+</li>
+<li><p>Cohere:<br>一个第三方RAG system allows LLMs to accurately answer questions and solve tasks using enterprise data as the source of truth<br><a target="_blank" rel="noopener" href="https://cohere.com/">https://cohere.com/</a></p>
+</li>
+<li><p>COGNOSYS：<br><a target="_blank" rel="noopener" href="https://www.cognosys.ai/">https://www.cognosys.ai/</a></p>
+</li>
+<li><p>Doanythingmachine:<br><a target="_blank" rel="noopener" href="https://www.doanythingmachine.com/">https://www.doanythingmachine.com/</a></p>
+</li>
+<li><p>alphakit.ai：<br>手机app构建agent<br><a target="_blank" rel="noopener" href="https://alphakit.ai/">https://alphakit.ai/</a><br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/agiresearch/OpenAGI">https://github.com/agiresearch/OpenAGI</a></p>
+</li>
+<li><p>AGIXT：<br>项目地址：<a target="_blank" rel="noopener" href="https://github.com/Josh-XT/AGiXT">https://github.com/Josh-XT/AGiXT</a></p>
+</li>
+</ul>
+
+      </div>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Shangyi Guo</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">17k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:01</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/CaptainCCCP" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</body>
+</html>
